@@ -4,6 +4,7 @@ include(FetchContent)
 
 set(absl_URL https://github.com/abseil/abseil-cpp.git)
 set(absl_TAG 20240116.0)
+#db08109eeb15fcd856761557f1668c2b34690036)
 
 set(re2_URL https://github.com/google/re2.git)
 set(re2_TAG 2024-02-01)
@@ -66,6 +67,7 @@ if (FUZZTEST_BUILD_TESTING)
 
 endif ()
 
+FetchContent_MakeAvailable(googletest)
 set(ABSL_PROPAGATE_CXX_STD ON)
 set(ABSL_ENABLE_INSTALL ON)
 FetchContent_MakeAvailable(abseil-cpp)
@@ -73,8 +75,8 @@ FetchContent_MakeAvailable(abseil-cpp)
 set(RE2_BUILD_TESTING OFF)
 FetchContent_MakeAvailable(re2)
 
-set(GTEST_HAS_ABSL ON)
-FetchContent_MakeAvailable(googletest)
+#set(GTEST_HAS_ABSL ON)
+#FetchContent_MakeAvailable(googletest)
 
 FetchContent_MakeAvailable(antlr_cpp)
 
