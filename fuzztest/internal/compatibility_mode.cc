@@ -125,7 +125,8 @@ void FuzzTestExternalEngineAdaptor::RunOneInputData(absl::string_view data) {
     std::_Exit(0);
   }
   runtime_.SetCurrentTest(&impl.test_, nullptr);
-  if (IsEnginePlaceholderInput(data)) return;
+  if (data.size() == 0) return;
+//  if (IsEnginePlaceholderInput(data)) return;
   auto input = impl.TryParse(data);
   if (!input) return;
   impl.RunOneInput({*std::move(input)});
